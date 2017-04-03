@@ -4,12 +4,7 @@ class profile::base(
     '1.ubuntu.pool.ntp.org',
   ],
 ) {
-  include ::ssh
   class { '::ntp':
     servers => $ntp_servers,
   }
-  if $facts['os']['family'] == 'Redhat' {
-    include ::profile::selinux
-  }
 }
-
