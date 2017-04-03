@@ -1,5 +1,5 @@
-class profile::nginx{
- includ ::nginx
+class profile::nginx {
+ include ::nginx
 
   ::nginx::vhost { $facts['fqdn']:
  }
